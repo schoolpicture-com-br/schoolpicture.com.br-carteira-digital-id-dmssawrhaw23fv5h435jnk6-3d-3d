@@ -1,0 +1,265 @@
+/* src/App.css */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #F7F9FD;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 120px; /* Espaço para o rodapé */
+  overflow-x: hidden; /* Impede a rolagem horizontal */
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  width: 100%;
+  max-width: 1200px;
+  box-sizing: border-box; /* Garante que o padding não cause overflow */
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Espaço entre left-side e content */
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box; /* Garante que o padding não cause overflow */
+}
+
+.left-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px; /* Espaço entre a logo, a imagem do perfil e o botão */
+  width: 100%; /* Largura igual à da imagem do perfil */
+  transform: none; /* Remove o deslocamento */
+  box-sizing: border-box; /* Garante que o padding não cause overflow */
+}
+
+.logo {
+  width: 100%; /* Largura igual à da imagem do perfil */
+  max-width: 300px; /* Largura máxima para a logo */
+  height: auto; /* Mantém a proporção da logo */
+  margin-bottom: 10px; /* Espaço entre a logo e a imagem do perfil */
+}
+
+.profile-image {
+  width: 100%; /* Largura da imagem do perfil */
+  max-width: 290px; /* Largura máxima para a imagem do perfil */
+  height: auto; /* Altura automática para manter a proporção */
+  object-fit: cover;
+  border-radius: 3px; /* Bordas arredondadas */
+}
+
+.status-button {
+  background-color: #1bda84;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 3px;
+  cursor: not-allowed;
+  width: 100%; /* Largura igual à da imagem do perfil */
+  max-width: 290px; /* Largura máxima para o botão */
+  text-align: center;
+  font-size: 1em;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap; /* Impede que o texto quebre em várias linhas */
+  font-weight: 400; /* Fonte mais fina */
+}
+
+.content {
+  background: #FFFFFF;
+  border-radius: 15px;
+  padding: 20px;
+  width: 90%; /* Largura relativa à tela */
+  max-width: 1110px; /* Largura máxima */
+  box-sizing: border-box; /* Garante que o padding não cause overflow */
+}
+
+.details {
+  width: 100%;
+}
+
+h1 {
+  font-size: 24px; /* Tamanho da fonte do nome */
+  margin: 0 0 20px;
+  color: #333; /* Cor do texto */
+  font-weight: 400; /* Fonte mais fina */
+}
+
+hr {
+  border: none;
+  border-top: 2px solid #ddd;
+  margin: 20px 0;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.full-width {
+  grid-column: span 1; /* Faz o elemento ocupar uma coluna */
+}
+
+label {
+  font-weight: 600; /* Fonte semi-negrito para os rótulos */
+  font-size: 16px; /* Tamanho da fonte dos labels */
+  margin-bottom: 5px;
+  display: block;
+  color: #555; /* Cor dos labels */
+}
+
+p {
+  margin: 0;
+  font-size: 16px; /* Tamanho da fonte dos valores */
+  color: #333; /* Cor dos valores */
+  font-weight: 400; /* Fonte mais fina */
+  background-color: #f8f8f8; /* Fundo cinza claro */
+  border: 1px solid #ccc; /* Borda cinza */
+  border-radius: 3px; /* Bordas arredondadas */
+  padding: 8px 12px; /* Espaçamento interno */
+  width: 100%; /* Ocupa toda a largura disponível */
+  box-sizing: border-box; /* Garante que o padding não aumente a largura */
+}
+
+/* Estilos do Rodapé */
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #396DA6; /* Cor de fundo do rodapé */
+  padding: 20px;
+  border-top: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.footer-left {
+  font-size: 0.9em;
+  color: #ffffff; /* Cor do texto ajustada para contraste */
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.footer-link {
+  color: #ffffff; /* Cor branca */
+  text-decoration: underline; /* Linha embaixo */
+  font-weight: bold; /* Texto em negrito */
+  filter: brightness(1.5); /* Branco mais brilhante */
+}
+
+.footer-right {
+  display: flex;
+  gap: 10px;
+}
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  filter: brightness(0) invert(1); /* Ícones brancos */
+}
+
+.social-icon.twitter-icon {
+  width: 46px; /* Aumenta a largura em 10px */
+  height: 46px; /* Aumenta a altura em 10px */
+}
+
+.social-icon.abrinq-icon {
+  filter: none; /* Mantém a cor original do ícone da Abrinq */
+}
+
+/* Media Queries para telas maiores */
+@media (min-width: 900px) {
+  .main-content {
+    flex-direction: row;
+    gap: 40px;
+  }
+
+  .left-side {
+    width: 300px;
+    transform: translateX(-20px) translateY(-20px);
+  }
+
+  .content {
+    width: calc(100% - 340px); /* Ajusta a largura conforme o espaço disponível */
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .full-width {
+    grid-column: span 2;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  label {
+    font-size: 18px;
+  }
+
+  p {
+    font-size: 18px;
+  }
+
+  .footer {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-left {
+    text-align: left;
+    margin-left: 20px;
+    margin-bottom: 0;
+  }
+
+  .footer-right {
+    margin-right: 50px;
+  }
+}
+
+@media (min-width: 900px) {
+  .container {
+    padding: 40px;
+  }
+
+  .main-content {
+    gap: 60px;
+  }
+
+  .left-side {
+    width: 300px;
+  }
+
+  .content {
+    width: calc(100% - 360px); /* Ajusta a largura conforme o espaço disponível */
+  }
+}
+
+/* Esconder ícones do rodapé em telas menores que 600px */
+@media (max-width: 900px) {
+  .foder{
+    display: none;
+  }
+  .footer-right {
+    display: none; /* Esconde os ícones do rodapé */
+  }
+}
