@@ -17,7 +17,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 40px;
+  padding: 20px;
   width: 100%;
   max-width: 1200px;
   box-sizing: border-box; /* Garante que o padding não cause overflow */
@@ -25,8 +25,9 @@ body {
 
 .main-content {
   display: flex;
-  gap: 60px; /* Espaço entre left-side e content */
-  align-items: flex-start;
+  flex-direction: column;
+  gap: 20px; /* Espaço entre left-side e content */
+  align-items: center;
   width: 100%;
   box-sizing: border-box; /* Garante que o padding não cause overflow */
 }
@@ -36,20 +37,22 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 20px; /* Espaço entre a logo, a imagem do perfil e o botão */
-  width: 300px; /* Largura igual à da imagem do perfil */
-  transform: translateX(-20px) translateY(-20px); /* Move para cima e para a esquerda */
+  width: 100%; /* Largura igual à da imagem do perfil */
+  transform: none; /* Remove o deslocamento */
   box-sizing: border-box; /* Garante que o padding não cause overflow */
 }
 
 .logo {
   width: 100%; /* Largura igual à da imagem do perfil */
+  max-width: 300px; /* Largura máxima para a logo */
   height: auto; /* Mantém a proporção da logo */
-  margin-bottom: 2px; /* Espaço entre a logo e a imagem do perfil */
+  margin-bottom: 10px; /* Espaço entre a logo e a imagem do perfil */
 }
 
 .profile-image {
-  width: 290px; /* Largura da imagem do perfil */
-  height: 390px; /* Altura da imagem do perfil */
+  width: 100%; /* Largura da imagem do perfil */
+  max-width: 290px; /* Largura máxima para a imagem do perfil */
+  height: auto; /* Altura automática para manter a proporção */
   object-fit: cover;
   border-radius: 3px; /* Bordas arredondadas */
 }
@@ -58,13 +61,14 @@ body {
   background-color: #1bda84;
   color: white;
   border: none;
-  padding: 10px 40px;
+  padding: 10px 20px;
   border-radius: 3px;
   cursor: not-allowed;
   width: 100%; /* Largura igual à da imagem do perfil */
+  max-width: 290px; /* Largura máxima para o botão */
   text-align: center;
-  font-size: 1.1em;
-  height: 30px;
+  font-size: 1em;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -75,9 +79,9 @@ body {
 .content {
   background: #FFFFFF;
   border-radius: 15px;
-  padding: 40px;
-  flex-grow: 1;
-  width: 1110px; /* Largura fixa para o container branco */
+  padding: 20px;
+  width: 90%; /* Largura relativa à tela */
+  max-width: 1110px; /* Largura máxima */
   box-sizing: border-box; /* Garante que o padding não cause overflow */
 }
 
@@ -86,7 +90,7 @@ body {
 }
 
 h1 {
-  font-size: 32px; /* Tamanho da fonte do nome */
+  font-size: 24px; /* Tamanho da fonte do nome */
   margin: 0 0 20px;
   color: #333; /* Cor do texto */
   font-weight: 400; /* Fonte mais fina */
@@ -100,17 +104,17 @@ hr {
 
 .info-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 20px;
 }
 
 .full-width {
-  grid-column: span 2; /* Faz o elemento ocupar duas colunas */
+  grid-column: span 1; /* Faz o elemento ocupar uma coluna */
 }
 
 label {
   font-weight: 600; /* Fonte semi-negrito para os rótulos */
-  font-size: 18px; /* Tamanho da fonte dos labels */
+  font-size: 16px; /* Tamanho da fonte dos labels */
   margin-bottom: 5px;
   display: block;
   color: #555; /* Cor dos labels */
@@ -118,7 +122,7 @@ label {
 
 p {
   margin: 0;
-  font-size: 18px; /* Tamanho da fonte dos valores */
+  font-size: 16px; /* Tamanho da fonte dos valores */
   color: #333; /* Cor dos valores */
   font-weight: 400; /* Fonte mais fina */
   background-color: #f8f8f8; /* Fundo cinza claro */
@@ -139,15 +143,16 @@ p {
   padding: 20px;
   border-top: 1px solid #ddd;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
   box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .footer-left {
-  font-size: 1em;
+  font-size: 0.9em;
   color: #ffffff; /* Cor do texto ajustada para contraste */
-  margin-left: 20px;
+  text-align: center;
+  margin-bottom: 10px;
 }
 
 .footer-link {
@@ -157,30 +162,104 @@ p {
   filter: brightness(1.5); /* Branco mais brilhante */
 }
 
-
-.footer-left span {
-  margin-right: 10px;
-}
-
 .footer-right {
   display: flex;
   gap: 10px;
-  margin-right: 20px;
 }
 
 .social-icon {
- margin-right: 50px;
-  width: 48;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   cursor: pointer;
   filter: brightness(0) invert(1); /* Ícones brancos */
 }
 
 .social-icon.twitter-icon {
-  width: 56px; /* Aumenta a largura em 10px */
-  height: 56px; /* Aumenta a altura em 10px */
+  width: 46px; /* Aumenta a largura em 10px */
+  height: 46px; /* Aumenta a altura em 10px */
 }
 
 .social-icon.abrinq-icon {
   filter: none; /* Mantém a cor original do ícone da Abrinq */
+}
+
+/* Media Queries para telas maiores */
+@media (min-width: 900px) {
+  .main-content {
+    flex-direction: row;
+    gap: 40px;
+  }
+
+  .left-side {
+    width: 300px;
+    transform: translateX(-20px) translateY(-20px);
+  }
+
+  .content {
+    width: calc(100% - 340px); /* Ajusta a largura conforme o espaço disponível */
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .full-width {
+    grid-column: span 2;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  label {
+    font-size: 18px;
+  }
+
+  p {
+    font-size: 18px;
+  }
+
+  .footer {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-left {
+    text-align: left;
+    margin-left: 20px;
+    margin-bottom: 0;
+  }
+
+  .footer-right {
+    margin-right: 50px;
+  }
+}
+
+@media (min-width: 900px) {
+  .container {
+    padding: 40px;
+  }
+
+  .main-content {
+    gap: 60px;
+  }
+
+  .left-side {
+    width: 300px;
+  }
+
+  .content {
+    width: calc(100% - 360px); /* Ajusta a largura conforme o espaço disponível */
+  }
+}
+
+/* Esconder ícones do rodapé em telas menores que 600px */
+@media (max-width: 900px) {
+  .foder{
+    display: none;
+  }
+  .footer-right {
+    display: none; /* Esconde os ícones do rodapé */
+  }
 }
